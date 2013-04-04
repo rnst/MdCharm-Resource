@@ -11,7 +11,10 @@ Markdown(Extra) Cheat Sheet
 * [Lists](#lists)
 * [Paragraph](#paragraph)
 * [Table](#table)
-* [Literal Characters] (#literal)
+* [Literal Characters](#literal)
+* [Footnote](#footnote)
+* [Math](#math)
+* [Multi-Markdown](#mmd)
 
 Blockquotes {#blockquotes}
 --------------------------
@@ -104,6 +107,19 @@ Images {#images}
 Markdown Input | Result
 ---------------|-------
 `![MdCharm](qrc:/mdcharm.png "MdCharm")` | ![MdCharm](qrc:/mdcharm.png "MdCharm")
+
+**width and height attribute**  
+*Please [enable Multi-Markdown](#mmd "") first.*   
+```
+![MdCharmWH][]
+
+[MdCharmWH]: qrc:/mdcharm.png width=100px height=100px
+```
+**result**
+<figure>
+<img src="qrc:/mdcharm.png" alt="MdCharmWH" id="mdcharmwh" style="height:100px;width:100px;" />
+<figcaption>MdCharmWH</figcaption></figure>
+
 ******************************************************************************
 Inline Html {#inlineHtml}
 -------------------------
@@ -220,3 +236,36 @@ from <http://daringfireball.net/projects/markdown/syntax#backslash>
 > 	  -	  minus sign (hyphen)
 >     .   dot
 >     !   exclamation mark
+
+Footnote[^footnote] {#footnote}
+--------
+```
+Footnote example[^footnote].
+
+[^footnote]: I am a footnote.
+```
+[^footnote]: I am a footnote
+
+Math {#math}
+----
+**Please [enable Multi-Markdown](#mmd "") first.**   
+*Export to PDF, ODT and Live Preview are not supported*   
+form: http://fletcher.github.com/peg-multimarkdown/#math
+> ```
+> HTML Header: <script type="text/javascript"
+> src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+> </script>
+> 
+> An example of math within a paragraph --- \\({e}^{i\pi }+1=0\\)
+> --- easy enough.
+> 
+> And an equation on it's own:
+> 
+> \\[ {x}_{1,2}=\frac{-b\pm \sqrt{{b}^{2}-4ac}}{2a} \\]
+> 
+> That's it.
+```
+
+Multi-Markdown {#mmd}
+--------------
+**Enable Multi-Markdown:** Select `Settings` -> `Preference...` -> `Environment`, change `Markdown Engine` to `MultiMarkdown`
